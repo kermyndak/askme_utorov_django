@@ -25,7 +25,11 @@ def index(request):
 
 def hot(request):
     questions = QUESTIONS[::-1]
-    return render(request, template_name='hot.html', context={'questions': questions})
+    page_num = request.GET.get('page', 1)
+    paginator = Paginator(questions, per_page=5)
+    page_obj = paginator.page(page_num)
+    page_count = list(range(1, len([i for i in range(0, len(questions), 5)]) + 1))
+    return render(request, template_name='hot.html', context={'questions': page_obj, 'page_range': page_count})
 
 def question(request, question_id):
     item = QUESTIONS[question_id]

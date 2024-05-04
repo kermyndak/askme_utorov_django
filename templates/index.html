@@ -12,6 +12,6 @@
                 {% include 'layouts/question.html' %}
             {% endfor %}
 
-            {% include 'layouts/pagination.html' with page_obj=questions %}
+            {% include 'layouts/pagination.html' with page_obj=questions current_page='index' %}
         </div>
 {% endblock content %}
