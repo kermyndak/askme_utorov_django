@@ -1,0 +1,30 @@
+{% load static %}
+<article class="card mb-3 w-100">
+    <div class="row g-0">
+        <div class="col-3 p-2">
+            <div class="border w-100 mb-3 overflow-hidden" style="height: 100px">
+                <img src="{% static 'img/default_image_for_profile.jpg' %}" class="img-fluid relative" alt="...">
+            </div>
+            <div class="input-group flex-nowrap">
+                <input type="number" value="222" class="form-control">
+            </div>
+        </div>
+        <div class="col">
+            <div class="answer">
+                <p class="answer-text">
+                    {{answer.body}}
+                </p>
+                <div class="row">
+                    <div class="col-8">
+                        {% if answer.correct %}
+                            <picture>
+                                <img src="{% static 'img/checked.svg' %}" alt="" class="img-fluid">
+                            </picture>
+                            Correct!
+                        {% endif %} 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>

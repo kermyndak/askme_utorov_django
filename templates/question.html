@@ -1,0 +1,20 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+    <div class="row">
+        <div class="col-8">
+            <div class="row g-0">
+                {% include 'layouts/question.html' %}
+            </div>
+            {% for answer in answers %}
+                {% include 'layouts/answer.html' %}
+            {% endfor %}
+            <hr>
+            
+            <div class="mb-5 w-100">
+                <div class="input-group mb-3">
+                    <textarea class="form-control resize-none" placeholder="Enter your answer here..." rows="5"></textarea>
+                </div>
+                <button class="btn btn-success rounded-0" type="submit">ANSWER!</button>
+            </div>
+        </div>
+{% endblock content %}

@@ -1,0 +1,77 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>AskPupkinTea</title>
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-sm-fluid container-lg">
+                <a class="navbar-brand" href="{% url 'index' %}">AskPupkinTea</a>
+                <form class="d-flex" role="search">
+                    <input
+                        class="form-control me-2"
+                        type="search"
+                        placeholder="Search"
+                        aria-label="Search"
+                    >
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <div class="d-flex justify-content-between gap-3">
+                    <div class="border">
+                        <img src="{% static 'img/default_image_for_profile.jpg'%}" width="50" height="50">
+                    </div>
+                    <div class="d-flex flex-column justify-content-between">
+                        <div>Dr. Pepper</div>
+                        <div>
+                            <a href="/settings.html">Settings</a>
+                            <a href="/logout.html">Log out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <main class="container-fluid container-lg mt-4 pt-4">
+                    {% block content %}
+
+                    {% endblock %}
+                <div class="col-4">
+                    <h3>Popular tags</h3>
+                    <div class="row">
+                        <div class="col">
+                            <span class="badge text-bg-primary">Phuer</span>
+                            <span class="badge text-bg-secondary">Te guan yin</span>
+                            <span class="badge text-bg-success">Da hun pao</span>
+                            <span class="badge text-bg-dark">Dian hong</span>
+                            <span class="badge text-bg-warning">Bao Hao</span>
+                            <span class="badge text-bg-info">Gaba</span>
+                            <span class="badge text-bg-light">Dian sun</span>
+                            <span class="badge text-bg-danger">Red tea</span>
+                        </div>
+                    </div>
+                    <h3 class="mt-5">Best Members</h3>
+                    <div>
+                        <a href="/member.html" class="d-block">Mr. Freeman
+                        </a>
+                        <a href="/member.html" class="d-block">Mr. Freeman
+                        </a>
+                        <a href="/member.html" class="d-block">Mr. Freeman
+                        </a>
+                        <a href="/member.html" class="d-block">Mr. Freeman
+                        </a>
+                        <a href="/member.html" class="d-block">Mr. Freeman</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="p-3 bg-light">
+            <div class="container">
+                <span class="text-muted">Place sticky footer content here.</span>
+            </div>
+        </footer>
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    </body>
+</html>
